@@ -1,20 +1,20 @@
 # Gemma4-Edge-Bridge
 
-This repository demonstrates how to deploy a high-performance, 100% GPU-accelerated local AI environment using **Gemma 4:E2B** on a mid-range NVIDIA GTX 1050 Ti (4GB VRAM).
+Gemma4-Edge-Bridge is my local AI setup for running **Gemma 4:E2B** on a mid-range NVIDIA GTX 1050 Ti (4GB VRAM) with a GPU-first configuration tuned for fast, private inference.
 
 ## 💡 Key Features
 - **Zero-Cloud Privacy:** All inference happens locally on WSL2.
 - **Full GPU Utilization:** Optimized layers to fit entirely in 4GB VRAM.
 - **Seamless Integration:** Mirrored networking bridge between Windows Enterprise and Ubuntu.
 
-## 🛠️ Installation
+## 🛠️ Setup
 1. Copy `.wslconfig` to your Windows User folder so WSL2 picks up the memory and networking settings.
 2. Run `sh setup_linux.sh` in WSL2 to configure the Ollama service.
 3. Run `powershell ./setup_windows.ps1` to prepare the Python UI.
 4. Launch the interface: `streamlit run app.py`.
 
 ## 🧠 Why a Custom Modelfile?
-This project doesn't just run an off-the-shelf model. We created `gemma-hackathon` to:
+I use `gemma-hackathon` to:
 * **Force GPU Residency:** By setting `num_gpu 999`, we encourage Ollama to keep every model layer resident in the 4GB VRAM of the 1050 Ti for maximum speed.
 * **Logic-First Tuning:** We lower `temperature` to 0.3 so the model stays precise, technical, and suitable for engineering tasks.
 * **Environment Persistence:** This wraps the Google Gemma 4 base model in a fixed configuration, so the Streamlit UI always talks to the same hardware-optimized version.
