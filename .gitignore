@@ -1,0 +1,28 @@
+# Ignore Python Virtual Environments
+venv/
+.venv/
+env/
+
+# Ignore local runtime artifacts
+.state/
+setup.log
+*.log
+
+# Ignore environment files
+.env
+.env.*
+
+# Ignore Python Cache
+__pycache__/
+*.pyc
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore local repository structure notes
+Repository Structure.txt
+
+# Ignore WSL2 config (if users prefer to use their own)
+# However checking in for completeness
+#.wslconfig

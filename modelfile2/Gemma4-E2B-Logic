@@ -1,0 +1,13 @@
+FROM gemma4:e2b
+
+# Force full GPU offloading
+PARAMETER num_gpu 999
+PARAMETER num_ctx 2048
+PARAMETER num_batch 128
+
+# Logic-focused sampling for technical tasks
+PARAMETER temperature 0.3
+PARAMETER top_p 0.95
+PARAMETER top_k 64
+
+SYSTEM "You are a logical AI assistant optimized for edge computing and technical problem solving."

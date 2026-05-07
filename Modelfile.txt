@@ -1,0 +1,27 @@
+# Base model optimized for edge hardware
+FROM gemma4:e2b
+
+# ==========================================================
+# HARDWARE OPTIMIZATION
+# ==========================================================
+
+# GPU MODE (NVIDIA GTX 1050 Ti):
+# Uncomment the line below to force 100% GPU offloading.
+# PARAMETER num_gpu 999
+
+# CPU ONLY MODE: 
+# If you do not have an NVIDIA GPU, comment out the line 
+# 'PARAMETER num_gpu 999' above by adding a # at the start.
+# Note: Inference will be slower but fully functional.
+
+PARAMETER num_ctx 2048
+PARAMETER num_batch 128
+
+# ==========================================================
+# RESPONSE LOGIC & PERSONA
+# ==========================================================
+PARAMETER temperature 0.3
+PARAMETER top_p 0.95
+PARAMETER top_k 64
+
+SYSTEM "You are a logical AI assistant optimized for edge computing. Provide concise, accurate technical responses."

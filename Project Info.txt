@@ -1,0 +1,11 @@
+Project Name: Gemma4-Edge-Bridge
+
+Tagline: High-performance, GPU-accelerated local AI infrastructure for Windows Enterprise & WSL2.
+
+The Tagline (Add this to the GitHub "About" section):
+
+"A high-performance, GPU-accelerated local AI deployment suite for Gemma 4:E2B on WSL2."
+
+After creating the repository, add Topics (tags) so people can find it. 
+
+Tags to use: #machine-learning #gemma4 #wsl2 #nvidia-gpu #streamlit #python
